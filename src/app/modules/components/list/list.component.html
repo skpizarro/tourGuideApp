@@ -1,0 +1,21 @@
+
+<div *ngIf="touristicAttractionsList.length === 0" class="alert alert-warning" role="alert">
+  No hay sitios turisticos en la lista
+</div>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <div *ngFor="let site of touristicAttractionsList" class="col" >
+    <div class="card h-100" appCustomBorder>
+      <img [src]="site.images[0]" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{site.name}}</h5>
+        <h5 class="card-title">{{[site.city.name, 'Dep' ] | formatLocation}}</h5>
+        <p class="card-text">{{site.description}}</p>
+        <div class="card-footer">
+          <button class="btn btn-success">Ver detalle</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

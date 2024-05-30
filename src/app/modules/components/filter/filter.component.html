@@ -1,0 +1,12 @@
+<form [formGroup]="form">
+
+  <select class="form-select" aria-label="Default select example" (change)="onSelectedDepartment()" formControlName="department">
+    <option selected>seleccione Departamento</option>
+    <option *ngFor="let dep of departmentList" [value]="dep.id" >{{dep.name}}</option>
+  </select>
+
+  <select class="form-select" aria-label="Default select example" formControlName="city" (change)="onSelectedCity()">
+    <option selected>Seleccione Ciudad</option>
+    <option *ngFor="let city of citiesList" [value]="city.id" >{{city.name}}</option>
+  </select>
+</form>
